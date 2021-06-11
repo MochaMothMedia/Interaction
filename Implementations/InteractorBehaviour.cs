@@ -101,7 +101,7 @@ namespace FedoraDev.Interaction.Implementations
 
 			for (int i = 0; i < _interactables.Count; i++)
 			{
-				float facingValue = Vector3.Dot(transform.forward, Vector3.Normalize(transform.position - _interactables[i].GameObject.transform.position));
+				float facingValue = Vector3.Dot(transform.forward, Vector3.Normalize(_interactables[i].GameObject.transform.position - transform.position));
 				if (facingValue < _facingRange)
 					continue;
 
