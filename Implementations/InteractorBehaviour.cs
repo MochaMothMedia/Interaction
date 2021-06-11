@@ -89,7 +89,7 @@ namespace FedoraDev.Interaction.Implementations
 		{
 			for (int i = 0; i < _interactables.Count; i++)
 			{
-				if (_interactables[i] == null)
+				if (_interactables[i].GameObject == null)
 					_interactables.RemoveAt(i--);
 			}
 		}
