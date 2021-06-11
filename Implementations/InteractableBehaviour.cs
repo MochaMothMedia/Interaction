@@ -7,7 +7,6 @@ namespace FedoraDev.Interaction.Implementations
 	public class InteractableBehaviour : SerializedMonoBehaviour, IInteractable
 	{
 		public float Priority => _interactable.Priority;
-		public GameObject GameObject => gameObject == null ? null : gameObject;
 
 		[SerializeField] IInteractable _interactable;
 

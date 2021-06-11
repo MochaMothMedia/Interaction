@@ -17,7 +17,7 @@ namespace FedoraDev.Interaction.Implementations
 		[SerializeField, Range(0, 1)] float _facingWeight = 0.33f;
 		[SerializeField, Range(0, 1)] float _priorityWeight = 0.33f;
 		[SerializeField, Range(0, 1)] float _facingRange = 0.5f;
-		[ShowInInspector, ReadOnly, HideLabel, BoxGroup("Interactables")] List<IInteractable> _interactables = new List<IInteractable>();
+		[ShowInInspector, ReadOnly, HideLabel, BoxGroup("Interactables")] List<GameObject> _interactables = new List<GameObject>();
 
 		float _distanceMultiplierBehind = 0.33f;
 		float _facingMultiplierBehind = 0.33f;
@@ -32,15 +32,15 @@ namespace FedoraDev.Interaction.Implementations
 		private void OnTriggerEnter(Collider other)
 		{
 			IInteractable interactable = other.GetComponent<IInteractable>();
-			if (interactable != null && !_interactables.Contains(interactable))
-				_interactables.Add(interactable);
+			if (interactable != null && !_interactables.Contains(other.gameObject))
+				_interactables.Add(other.gameObject);
 		}
 
 		private void OnTriggerExit(Collider other)
 		{
 			IInteractable interactable = other.GetComponent<IInteractable>();
-			if (interactable != null && _interactables.Contains(interactable))
-				_interactables.Remove(interactable);
+			if (interactable != null && _interactables.Contains(other.gameObject))
+				_interactables.Remove(other.gameObject);
 		}
 
 		private void OnValidate()
@@ -89,7 +89,7 @@ namespace FedoraDev.Interaction.Implementations
 		{
 			for (int i = 0; i < _interactables.Count; i++)
 			{
-				if (_interactables[i].GameObject == null)
+				if (_interactables[i] == null)
 					_interactables.RemoveAt(i--);
 			}
 		}
@@ -101,16 +101,17 @@ namespace FedoraDev.Interaction.Implementations
 
 			for (int i = 0; i < _interactables.Count; i++)
 			{
-				float facingValue = Vector3.Dot(transform.forward, Vector3.Normalize(_interactables[i].GameObject.transform.position - transform.position));
+				IInteractable interactableI = _interactables[i].GetComponent<IInteractable>();
+				float facingValue = Vector3.Dot(transform.forward, Vector3.Normalize(_interactables[i].transform.position - transform.position));
 				if (facingValue < _facingRange)
 					continue;
 
-				float distanceValue = Mathf.Max(1f, Vector3.Distance(transform.position, _interactables[i].GameObject.transform.position) / _radius);
-				float finalValue = (facingValue * _facingWeight) + (distanceValue * _distanceWeight) + (_interactables[i].Priority * _priorityWeight);
+				float distanceValue = Mathf.Max(1f, Vector3.Distance(transform.position, _interactables[i].transform.position) / _radius);
+				float finalValue = (facingValue * _facingWeight) + (distanceValue * _distanceWeight) + (interactableI.Priority * _priorityWeight);
 
 				if (interactable == null || finalValue > highestValue)
 				{
-					interactable = _interactables[i];
+					interactable = interactableI;
 					highestValue = finalValue;
 				}
 			}
