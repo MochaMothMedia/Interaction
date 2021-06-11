@@ -1,0 +1,12 @@
+{
+	"name": "com.fedoradev.interaction",
+	"displayName": "Interaction",
+	"version": "1.0.0",
+	"unity": "2020.3",
+	"unityRelease": "2f1",
+	"description": "Interaction solution for managing interactable objects in Unity.",
+	"author": {
+		"name": "Fedora Dev",
+		"email": "fedora.game.dev@gmail.com"
+	}
+}

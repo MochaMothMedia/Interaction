@@ -1,0 +1,16 @@
+{
+    "name": "_FedoraDev.Interaction.Implementations",
+    "rootNamespace": "FedoraDev.Interaction.Implementations",
+    "references": [
+        "GUID:9613fc8ec4b4385449613a91f71fff25"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
