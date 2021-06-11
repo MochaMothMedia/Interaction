@@ -83,7 +83,7 @@ namespace FedoraDev.Interaction.Implementations
 		}
 
 		[Button("Interact")]
-		void Interact() => Interactable?.Interact(this);
+		public void Interact() => Interactable?.Interact(this);
 
 		public void PruneInteractables()
 		{
