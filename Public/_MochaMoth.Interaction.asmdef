@@ -1,9 +1,7 @@
 {
-    "name": "_FedoraDev.Interaction.Implementations",
-    "rootNamespace": "FedoraDev.Interaction.Implementations",
-    "references": [
-        "GUID:9613fc8ec4b4385449613a91f71fff25"
-    ],
+    "name": "_MochaMoth.Interaction",
+    "rootNamespace": "MochaMoth.Interaction",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

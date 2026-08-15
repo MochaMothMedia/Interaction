@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FedoraDev.Interaction
+namespace MochaMoth.Interaction
 {
     public interface IInteractor
     {

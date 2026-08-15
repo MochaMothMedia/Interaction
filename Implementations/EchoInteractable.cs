@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FedoraDev.Interaction.Implementations
+namespace MochaMoth.Interaction.Implementations
 {
 	public class EchoInteractable : IInteractable
 	{

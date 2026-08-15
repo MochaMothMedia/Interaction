@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace FedoraDev.Interaction.Implementations
+namespace MochaMoth.Interaction.Implementations
 {
 	[HideMonoScript]
 	public class InteractableBehaviour : SerializedMonoBehaviour, IInteractable

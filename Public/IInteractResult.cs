@@ -1,4 +1,4 @@
-namespace FedoraDev.Interaction
+namespace MochaMoth.Interaction
 {
     public interface IInteractResult
     {

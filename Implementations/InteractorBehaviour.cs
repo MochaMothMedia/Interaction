@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FedoraDev.Interaction.Implementations
+namespace MochaMoth.Interaction.Implementations
 {
 	[RequireComponent(typeof(SphereCollider))]
 	[RequireComponent(typeof(Rigidbody))]
